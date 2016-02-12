@@ -47,4 +47,4 @@ License and Copyright
 =====================
 Licensed under the GNU General Public License 3.
 
-(c) Bryan Steyns, 2016
+(c) Jens Nazarenus, 2013 | Bryan Steyns, 2016
