@@ -13,8 +13,15 @@ following code to your composer.json file:
 
     {
         "require": {
-            "bryan072/osrm-api-client": "dev-master"
-        }
+            "bryan072/osrm-api-client": "dev-master",
+            "jens-na/osrm-api-client": "dev-master"
+        },
+        "repositories": [
+            {
+               "type": "vcs",
+               "url": "https://github.com/bryan072/osrm-api-client"
+            }
+        ]
     }
 
 ###API Usage Policy
