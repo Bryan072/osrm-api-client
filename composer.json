@@ -1,10 +1,10 @@
 {
-  "name": "jens-na/osrm-api-client",
+  "name": "Bryan072/osrm-api-client",
   "description": "API client for the OSRM project",
   "authors": [
     {
-      "name": "Jens Nazarenus",
-      "email": "jens@0x6a.de"
+      "name": "Bryan Steyns",
+      "email": "bryan.steyns@gmail.com"
     }
   ],
   "require-dev": {
