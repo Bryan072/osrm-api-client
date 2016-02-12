@@ -19,6 +19,8 @@
 
 namespace Osrm;
 
+use Exception;
+
 class OsrmException extends Exception {
     
     public function __construct($message, $code = 0) {

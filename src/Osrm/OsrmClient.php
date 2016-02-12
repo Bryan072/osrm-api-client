@@ -59,44 +59,7 @@ class OsrmClient {
         curl_close($curl);
         $json = json_decode($resp);
         
-        if($json->status === 0) {
-            $latitude = $json->mapped_coordinate[0];
-            $longitude = $json->mapped_coordinate[1];
-            $name = $json->name;
-            
-            $retCoord = new Coordinate($latitude, $longitude);
-            $retCoord->setName($name);
-            
-            return $retCoord;
-        } else {
-            throw new OsrmException("Osrm status error", $json->{'status'});
-            return null;
-        }
-    }
-    
-    /**
-     * The 'locate' implementation of the OSRM server API.
-     * https://github.com/DennisOSRM/Project-OSRM/wiki/Server-api
-     * 
-     * @param \Osrm\Coordinate $coordinate
-     * @return type
-     */
-    public function getNearestNodePoint(Coordinate $coordinate) {
-        $this->prepareServerUrl();
-        
-        $requestUrl = $this->server . 'locate?' . $coordinate;   
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-           CURLOPT_RETURNTRANSFER => 1,
-           CURLOPT_URL => $requestUrl,
-        ));
-        
-        $resp = curl_exec($curl);
-        curl_close($curl);
-        
-        $json = json_decode($resp);
-        
-        if($json->status === 0) {
+        if($json->status === 200) {
             $latitude = $json->mapped_coordinate[0];
             $longitude = $json->mapped_coordinate[1];
             $name = $json->name;
