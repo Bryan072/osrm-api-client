@@ -13,7 +13,7 @@ following code to your composer.json file:
 
     {
         "require": {
-            "Bryan072/osrm-api-client": "dev-master"
+            "bryan072/osrm-api-client": "dev-master"
         }
     }
 
