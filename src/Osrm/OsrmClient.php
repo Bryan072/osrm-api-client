@@ -100,6 +100,8 @@ class OsrmClient {
             }
         }
         
+		$requestUrl = $requestUrl . "&instructions=true&compression=false";
+		
         $curl = curl_init();
         curl_setopt_array($curl, array(
            CURLOPT_RETURNTRANSFER => 1,
@@ -111,7 +113,7 @@ class OsrmClient {
         
         $json = json_decode($resp);
               
-        if($json->status === 0) {
+        if($json->status === 200) {
             $route = new Route();
             $route->setEndPoint($json->route_summary->end_point);
             $route->setStartPoint($json->route_summary->start_point);
